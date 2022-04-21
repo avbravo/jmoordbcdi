@@ -8,13 +8,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-   <jakartaee>9.1.0</jakartaee>
+        <jakartaee>9.1.0</jakartaee>
     </properties>
     <name>jmoordbcdi</name>
     
 
     <dependencies>
-         <dependency>
+        
+        <dependency>
             <groupId>org.jboss.weld.se</groupId>
             <artifactId>weld-se-shaded</artifactId>
             <version>5.0.0.CR2</version>
@@ -22,7 +23,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>9.1.0</version>
+            <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -36,6 +37,7 @@
             <artifactId>jakarta.el-api</artifactId>
             <version>5.0.0-RC1</version>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -43,7 +45,7 @@
         </dependency>
     </dependencies>
 
-  <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>${project.groupId}</groupId>
@@ -95,26 +97,6 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.2</version>
-                <configuration>
-                    <failOnError>true</failOnError>
-                    <!--                    <excludePackageNames>*.internal, dev.morphia.sofia</excludePackageNames>-->
-                    <excludePackageNames>dev.morphia.sofia,dev.morphia.annotations.builders</excludePackageNames>
-                    <doclint>none</doclint>
-                    <doctitle>Morphia ${project.version}</doctitle>
-                    <windowtitle>Morphia</windowtitle>
-                    <tagletArtifacts>
-                        <tagletArtifact>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>util</artifactId>
-                            <version>${project.version}</version>
-                        </tagletArtifact>
-                    </tagletArtifacts>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
                 <configuration>
@@ -123,10 +105,7 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-            </plugin>
+           
         </plugins>
     </build>
 </project>
