@@ -18,7 +18,8 @@ import java.util.Set;
  */
 @Decorator
 public abstract class RepositoryDecorator <T, V> implements Repository<T, V>{
-    @Inject @Delegate Repository<T, V> delegate;
+//    @Inject @Delegate Repository<T, V> delegate;
+    @Inject Repository<T, V> delegate;
 
     @Inject Logger log;
     @Inject Set<Permission> permissions;
