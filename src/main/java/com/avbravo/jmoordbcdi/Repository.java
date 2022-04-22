@@ -8,10 +8,14 @@ package com.avbravo.jmoordbcdi;
  *
  * @author avbravo
  */
-public interface Repository <T, V>{
-      public V getId(T object);
+public interface Repository<T, V> {
+
+    public V getId(T object);
+
     public T load(V id);
+
     public void save(T object);
+
     public void delete(T object);
 
     public Class<T> getDataType();

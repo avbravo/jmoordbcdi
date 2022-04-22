@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.avbravo.jmoordbcdi;
+package com.avbravo.jmoordbcdi.decorator;
 
+import com.avbravo.jmoordbcdi.Repository;
 import jakarta.decorator.Decorator;
 import jakarta.decorator.Delegate;
 import jakarta.inject.Inject;
@@ -18,8 +19,8 @@ import java.util.Set;
  */
 @Decorator
 public abstract class RepositoryDecorator <T, V> implements Repository<T, V>{
-//    @Inject @Delegate Repository<T, V> delegate;
-    @Inject Repository<T, V> delegate;
+  @Inject @Delegate Repository<T, V> delegate;
+  //  @Inject Repository<T, V> delegate;
 
     @Inject Logger log;
     @Inject Set<Permission> permissions;
