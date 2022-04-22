@@ -3,30 +3,48 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.avbravo</groupId>
     <artifactId>jmoordbcdi</artifactId>
-    <version>1.0-3</version>
+    <version>1.0-4</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <jakartaee>9.1.0</jakartaee>
+        <version.payara.micro>6.2022.1.Alpha2</version.payara.micro>
+        <version.payara>6.2022.1.Alpha2</version.payara>
     </properties>
     <name>jmoordbcdi</name>
     
 
     <dependencies>
-        
+        <!--        
         <dependency>
             <groupId>org.jboss.weld.se</groupId>
             <artifactId>weld-se-shaded</artifactId>
             <version>5.0.0.CR2</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- 
+      plugin de payara mucro
+        -->
         <dependency>
+            <groupId>fish.payara.api</groupId>
+            <artifactId>payara-bom</artifactId>
+            <version>${version.payara}</version>
+            <type>pom</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>11.0.0</version>
+            <classifier>jakarta</classifier>
+        </dependency>
+        <!--        <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
             <version>4.0.0</version>
@@ -36,7 +54,7 @@
             <groupId>jakarta.el</groupId>
             <artifactId>jakarta.el-api</artifactId>
             <version>5.0.0-RC1</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -46,7 +64,7 @@
     </dependencies>
 
     <build>
-                <finalName>${project.artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>${project.groupId}</groupId>

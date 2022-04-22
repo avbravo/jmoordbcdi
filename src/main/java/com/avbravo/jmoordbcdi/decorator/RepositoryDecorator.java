@@ -17,13 +17,13 @@ import java.util.Set;
  *
  * @author avbravo
  */
-@Decorator
+//@Decorator
 public abstract class RepositoryDecorator <T, V> implements Repository<T, V>{
-  @Inject @Delegate Repository<T, V> delegate;
-  //  @Inject Repository<T, V> delegate;
+//  @Inject @Delegate Repository<T, V> delegate;
+    @Inject Repository<T, V> delegate;
 
-    @Inject Logger log;
-    @Inject Set<Permission> permissions;
+//    @Inject Logger log;
+//    @Inject Set<Permission> permissions;
 
     public void save(T object) {
       //  authorize(SecureAction.SAVE, object);
